@@ -1,4 +1,4 @@
-#Laravel 4 - Bootstrap Empowered Application 
+#Laravel 4 - Bootstrap Empowered Application (WORK IN PROGRESS)
 
 This is a Laravel 4 Bootstrap Application. It is a fork off of [andrew13/Laravel-4-Bootstrap](http://github.com/andrew13/Laravel-4-Bootstrap) which includes Twitter Bootstrap 2.2.2 and it comes as an example application to help you get started. This Empowered version adds 3 additional items for improved development speed. 
 
