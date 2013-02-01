@@ -47,7 +47,7 @@ Navigate to your Laravel 4 website and try to login with the default credentials
 Create a new user at /account/register
 
 <a name="confide"></a>
-## Confide Authentication Solution [Confide](https://github.com/Zizaco/confide)
+## Confide Authentication Solution
 
 Used for the user auth and registration. In general for user controllers you'll want to use something like the following:
 
