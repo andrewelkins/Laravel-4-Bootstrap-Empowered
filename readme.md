@@ -69,7 +69,7 @@ Used for handling repetitive validation tasks.
 For full usage see [Ardent Documentation](https://github.com/laravelbook/ardent) 
 
 <a name="powerpack"></a>
-## [Laravel 4 PowerPack](https://github.com/laravelbook/laravel4-powerpack)
+## Laravel 4 PowerPack
 
 Adds string helper classes from Laravel 3 to Laravel 4.
 
