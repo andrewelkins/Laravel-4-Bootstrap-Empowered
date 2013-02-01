@@ -1,0 +1,17 @@
+{
+	"require": {
+		"laravel/framework": "4.0.*",
+		'Zizaco\Confide\ConfideServiceProvider',
+		"laravelbook/laravel4-powerpack": "dev-master"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/tests/TestCase.php"
+		]
+	},
+	"minimum-stability": "dev"
+}
