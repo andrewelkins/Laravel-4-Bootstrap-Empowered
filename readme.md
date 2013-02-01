@@ -62,9 +62,9 @@ Used for the user auth and registration. In general for user controllers you'll 
 For full usage see [Confide Documentation](https://github.com/Zizaco/confide)
 
 <a name="ardent"></a>
-## Ardent - Self-validating, secure and smart models for Laravel 4's Eloquent ORM
+## Ardent - Used for handling repetitive validation tasks.
 
-Used for handling repetitive validation tasks.
+Self-validating, secure and smart models for Laravel 4's Eloquent ORM 
 
 For full usage see [Ardent Documentation](https://github.com/laravelbook/ardent) 
 
