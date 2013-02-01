@@ -10,6 +10,11 @@ This is a Laravel 4 Bootstrap Application. It is a fork off of [andrew13/Laravel
 
 - [PowerPack](#powerpack)
 
+##Requirements
+
+	PHP >= 5.4.0 (Confide requires 5.4, this is an increase over Laravel's 5.3.7 requirement)
+	MCrypt PHP Extension
+
 ##How to install
 
 	git clone git://github.com/andrew13/Laravel-4-Bootstrap-Empowered.git laravel
