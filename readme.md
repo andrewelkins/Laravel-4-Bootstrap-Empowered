@@ -1,4 +1,4 @@
-#Laravel 4 - Bootstrap Empowered Application (WORK IN PROGRESS)
+#Laravel 4 - Bootstrap Empowered Application (Stable)
 
 This is a Laravel 4 Bootstrap Application. It is a fork off of [andrew13/Laravel-4-Bootstrap](http://github.com/andrew13/Laravel-4-Bootstrap) which includes Twitter Bootstrap 2.2.2 and it comes as an example application to help you get started. This Empowered version adds 3 additional items for improved development speed. 
 
@@ -25,7 +25,8 @@ This is a Laravel 4 Bootstrap Application. It is a fork off of [andrew13/Laravel
 ##Configure
 Now that you have the Laravel 4 installed, you need to create a database for it and update the file ***app/config/database.php***
 
-
+Set the `address` and `name` from the `from` array in `config/mail.php`. Those will be used to send account confirmation and password reset emails to the users.
+If you don't set that registration will fail because it cannot send the confirmation email.
 
 ##After that, run these commands to create and populate Users table:
 
