@@ -64,11 +64,11 @@
 							@if (Auth::check())
 							<li class="navbar-text">Logged in as {{ Auth::user()->fullName() }}</li>
 							<li class="divider-vertical"></li>
-							<li {{ (Request::is('account') ? 'class="active"' : '') }}><a href="{{ URL::to('account') }}">Account</a></li>
-							<li><a href="{{ URL::to('account/logout') }}">Logout</a></li>
+							<li {{ (Request::is('user') ? 'class="active"' : '') }}><a href="{{ URL::to('user') }}">Account</a></li>
+							<li><a href="{{ URL::to('user/logout') }}">Logout</a></li>
 							@else
-							<li {{ (Request::is('account/login') ? 'class="active"' : '') }}><a href="{{ URL::to('account/login') }}">Login</a></li>
-							<li {{ (Request::is('account/register') ? 'class="active"' : '') }}><a href="{{ URL::to('account/register') }}">Register</a></li>
+							<li {{ (Request::is('user/login') ? 'class="active"' : '') }}><a href="{{ URL::to('user/login') }}">Login</a></li>
+							<li {{ (Request::is('user/register') ? 'class="active"' : '') }}><a href="{{ URL::to('user/register') }}">Register</a></li>
 							@endif
 						</ul>
 					</div>

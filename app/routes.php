@@ -11,6 +11,5 @@
 |
 */
 
-
-Route::controller('account','AccountController' );
-Route::get('/', 'HomeController@showIndex');
+Route::get('/', 'HomeController@showIndex');// Confide Routes
+Route::controller( 'user',          'UserController');

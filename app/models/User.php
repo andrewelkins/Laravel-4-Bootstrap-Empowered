@@ -2,7 +2,7 @@
 
 use Illuminate\Auth\UserInterface;
 
-class User extends Eloquent implements UserInterface {
+class User extends ConfideUser {
 
 	/**
 	 * The database table used by the model.
