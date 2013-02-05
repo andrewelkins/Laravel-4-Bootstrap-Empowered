@@ -63,7 +63,7 @@ class UserController extends BaseController {
 
         if ( $user->id )
         {
-            return Redirect::to('login');
+            return Redirect::to('user/login');
         }
         else
         {
@@ -104,7 +104,7 @@ class UserController extends BaseController {
         else
         {
             $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
-            return Redirect::to('login')
+            return Redirect::to('user/login')
                 ->withInput(Input::except('password'))
                 ->with( 'error', $err_msg );
         }
@@ -115,18 +115,18 @@ class UserController extends BaseController {
      *
      * @param  string  $code
      */
-    public function getConfirm( $code )
+    public function getActivate( $code )
     {
         if ( Confide::confirm( $code ) )
         {
             $notice_msg = Lang::get('confide::confide.alerts.confirmation');
-            return Redirect::to('login')
+            return Redirect::to('user/login')
                 ->with( 'notice', $notice_msg );
         }
         else
         {
             $error_msg = Lang::get('confide::confide.alerts.wrong_confirmation');
-            return Redirect::to('login')
+            return Redirect::to('user/login')
                 ->with( 'error', $error_msg );
         }
     }
@@ -149,7 +149,7 @@ class UserController extends BaseController {
         if( Confide::resetPassword( Input::get( 'email' ) ) )
         {
             $notice_msg = Lang::get('confide::confide.alerts.password_reset');
-            return Redirect::to('login')
+            return Redirect::to('user/login')
                 ->with( 'notice', $notice_msg );
         }
         else
@@ -165,7 +165,7 @@ class UserController extends BaseController {
      * Log the user out of the application.
      *
      */
-    public function postLogout()
+    public function getLogout()
     {
         Confide::logout();
         
