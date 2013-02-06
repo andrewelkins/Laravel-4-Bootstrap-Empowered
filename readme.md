@@ -65,8 +65,7 @@ Used for the user auth and registration. In general for user controllers you'll 
 
     }
 
-For full usage see [andrew13/Confide Documentation](https://github.com/andrew13/confide)
-A fork of Zizaco Confide [Zizaco/Confide Documentation](https://github.com/zizaco/confide)
+For full usage see [Zizaco/Confide Documentation](https://github.com/zizaco/confide)
 
 <a name="ardent"></a>
 ## Ardent - Used for handling repetitive validation tasks.

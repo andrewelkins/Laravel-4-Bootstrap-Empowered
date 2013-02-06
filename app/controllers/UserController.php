@@ -12,22 +12,6 @@
 class UserController extends BaseController {
 
     /**
-     * Lets whitelist all the methods we want to allow guests to visit
-     *
-     * @access   protected
-     * @var      array
-     */
-    protected $whitelist = array(
-        'getLogin',
-        'postLogin',
-        'getRegister',
-        'postRegister',
-        'getForgotPassword',
-        'postResetPassword'
-    );
-
-
-    /**
      * Check that the user is logged in, show profile page
      */
     public function getIndex()
@@ -36,16 +20,20 @@ class UserController extends BaseController {
         return View::make('user/index')->with('user', array());
     }
 
-    public function getRegister()
+    /**
+     * Displays the form for account creation
+     *
+     */
+    public function getCreate()
     {
-        return View::make('user/register');
+        return View::make('user/create');
     }
 
     /**
      * Stores new account
      *
      */
-    public function postRegister()
+    public function postIndex()
     {
         $user = new User;
 
@@ -63,15 +51,17 @@ class UserController extends BaseController {
 
         if ( $user->id )
         {
-            return Redirect::to('user/login');
+            // Redirect with success message, You may replace "Lang::get(..." for your custom message.
+                        return Redirect::to('user/login')
+                            ->with( 'notice', Lang::get('confide::confide.alerts.account_created') );
         }
         else
         {
             // Get validation errors (see Ardent package)
             $error = $user->getErrors()->all();
 
-            return Redirect::to('register')
-                ->withInput(Input::except('password'))
+                        return Redirect::to('user/create')
+                            ->withInput(Input::except('password'))
                 ->with( 'error', $error );
         }
     }
@@ -92,11 +82,14 @@ class UserController extends BaseController {
     public function postLogin()
     {
         $input = array(
-            'email' => Input::get( 'email' ),
+            'email'    => Input::get( 'email' ), // May be the username too
             'password' => Input::get( 'password' ),
             'remamber' => Input::get( 'remember' ),
         );
 
+        // If you wish to only allow login from confirmed users, call logAttempt
+        // with the second parameter as true.
+        // logAttempt will check if the 'email' perhaps is the username.
         if ( Confide::logAttempt( $input ) ) 
         {
             return Redirect::to('/');
@@ -104,8 +97,8 @@ class UserController extends BaseController {
         else
         {
             $err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
-            return Redirect::to('user/login')
-                ->withInput(Input::except('password'))
+                        return Redirect::to('user/login')
+                            ->withInput(Input::except('password'))
                 ->with( 'error', $err_msg );
         }
     }
@@ -115,19 +108,19 @@ class UserController extends BaseController {
      *
      * @param  string  $code
      */
-    public function getActivate( $code )
+    public function getConfirm( $code )
     {
         if ( Confide::confirm( $code ) )
         {
             $notice_msg = Lang::get('confide::confide.alerts.confirmation');
-            return Redirect::to('user/login')
-                ->with( 'notice', $notice_msg );
+                        return Redirect::to('user/login')
+                            ->with( 'notice', $notice_msg );
         }
         else
         {
             $error_msg = Lang::get('confide::confide.alerts.wrong_confirmation');
-            return Redirect::to('user/login')
-                ->with( 'error', $error_msg );
+                        return Redirect::to('user/login')
+                            ->with( 'error', $error_msg );
         }
     }
 
@@ -135,28 +128,28 @@ class UserController extends BaseController {
      * Displays the forgot password form
      *
      */
-    public function getForgotPassword()
+    public function getForgot()
     {
-        return View::make('user/forgot-password');
+        return View::make('user/forgot');
     }
 
     /**
      * Attempt to reset password with given email
      *
      */
-    public function postResetPassword()
+    public function postForgot()
     {
         if( Confide::resetPassword( Input::get( 'email' ) ) )
         {
             $notice_msg = Lang::get('confide::confide.alerts.password_reset');
-            return Redirect::to('user/login')
-                ->with( 'notice', $notice_msg );
+                        return Redirect::to('user/login')
+                            ->with( 'notice', $notice_msg );
         }
         else
         {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_reset');
-            return Redirect::to('forgot-password')
-                ->withInput()
+                        return Redirect::to('user/forgot')
+                            ->withInput()
                 ->with( 'error', $error_msg );
         }
     }

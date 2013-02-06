@@ -1,7 +1,7 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-		"andrew13/confide": "dev-master",
+		"zizaco/confide": "dev-master",
 		"laravelbook/laravel4-powerpack": "dev-master"
 	},
 	"autoload": {
