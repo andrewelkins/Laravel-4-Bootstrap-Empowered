@@ -93,7 +93,7 @@ For full usage see [PowerPack Documentation](https://github.com/laravelbook/lara
 
 ## License
 
-Confide is free software distributed under the terms of the MIT license
+This is free software distributed under the terms of the MIT license
 
 ## Aditional information
 
