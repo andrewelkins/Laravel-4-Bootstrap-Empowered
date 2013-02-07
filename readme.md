@@ -97,4 +97,6 @@ This is free software distributed under the terms of the MIT license
 
 ## Aditional information
 
+Fork of a fork of code that was originally created by [brunogaspar](https://github.com/brunogaspar)
+
 Any questions, feel free to [contact me](http://twitter.com/andrewelkins).
