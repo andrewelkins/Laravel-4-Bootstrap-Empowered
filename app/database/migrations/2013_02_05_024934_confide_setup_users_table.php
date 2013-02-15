@@ -21,6 +21,14 @@ class ConfideSetupUsersTable extends Migration {
             $table->boolean('confirmed')->default(false);
             $table->timestamps();
         });
+
+        // Creates password reminders table
+        Schema::create('password_reminders', function($t)
+        {
+            $t->string('email');
+            $t->string('token');
+            $t->timestamp('created_at');
+        });
     }
 
     /**
@@ -30,6 +38,7 @@ class ConfideSetupUsersTable extends Migration {
      */
     public function down()
     {
+        Schema::drop('password_reminders');
         Schema::drop('users');
     }
 
