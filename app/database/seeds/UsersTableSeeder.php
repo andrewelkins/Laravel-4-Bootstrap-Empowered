@@ -12,7 +12,9 @@ class UsersTableSeeder extends Seeder {
                 'username'      => 'test',
                 'email'      => 'test@test.com',
                 'password'   => Hash::make('test'),
-                'confirmed'   => 0
+                'confirmed'   => 0,
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
             )
         );
 
