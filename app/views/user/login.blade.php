@@ -11,5 +11,5 @@
 <div class="page-header">
 	<h1>Login into your account</h1>
 </div>
-{{ Confide::makeLoginForm()->render() }}
+{{{ Confide::makeLoginForm()->render() }}}
 @stop
