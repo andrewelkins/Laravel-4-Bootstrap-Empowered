@@ -12,5 +12,10 @@
 */
 
 Route::get('/', 'HomeController@showIndex');
+
+Route::group(array('before' => 'auth'), function()
+{
+    Route::get('user', 'UserController@getIndex');
+});
 // Confide Routes
-Route::controller( 'user',          'UserController');
+Route::controller( 'user', 'UserController');

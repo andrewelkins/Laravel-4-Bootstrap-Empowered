@@ -16,8 +16,14 @@ class UserController extends BaseController {
      */
     public function getIndex()
     {
-        // Todo actually get the user and error
-        return View::make('user/index')->with('user', array());
+        // Get the user information
+        $user = Auth::user();
+        if(empty($user))
+        {
+            return Redirect::to('user/login')
+                ->with( 'notice', Lang::get('confide::confide.signup.title') );
+        }
+        return View::make('user/index')->with('user', $user);
     }
 
     /**
