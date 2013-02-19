@@ -16,13 +16,9 @@ class UserController extends BaseController {
      */
     public function getIndex()
     {
-        // Get the user information
-        $user = Auth::user();
-        if(empty($user))
-        {
-            return Redirect::to('user/login')
-                ->with( 'notice', Lang::get('confide::confide.signup.title') );
-        }
+        list($user,$redirect) = User::checkAuthAndRedirect('user');
+        if($redirect){return $redirect;}
+
         return View::make('user/index')->with('user', $user);
     }
 
@@ -78,6 +74,9 @@ class UserController extends BaseController {
      */
     public function getLogin()
     {
+        list($user,$redirect) = User::checkAuthAndRedirect('user', true);
+        if($redirect){return $redirect;}
+
         return View::make('user/login');
     }
 

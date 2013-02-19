@@ -22,4 +22,31 @@ class User extends ConfideUser {
         return $this->first_name . ' ' . $this->last_name;
     }
 
+    /**
+     * Redirect after auth.
+     * If ifValid is set to true it will redirect a logged in user.
+     * @param $redirect
+     * @param bool $ifValid
+     * @return mixed
+     */
+    public static function checkAuthAndRedirect($redirect, $ifValid=false)
+    {
+        // Get the user information
+        $user = Auth::user();
+        $redirectTo = false;
+
+        if(empty($user->id) && ! $ifValid) // Not logged in redirect, set session.
+        {
+            Session::put('loginRedirect', $redirect);
+            $redirectTo = Redirect::to('user/login')
+                ->with( 'notice', Lang::get('user/user.login_first') );
+        }
+        elseif(!empty($user->id) && $ifValid) // Valid user, we want to redirect.
+        {
+            $redirectTo = Redirect::to($redirect);
+        }
+
+        return array($user, $redirectTo);
+    }
+
 }
