@@ -21,12 +21,10 @@
 		================================================== -->
 		<link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
 		<link href="{{ asset('assets/css/bootstrap-responsive.css') }}" rel="stylesheet">
+		<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
 		<style>
 		@section('styles')
-			body {
-				padding-top: 60px;
-			}
 		@show
 		</style>
 
@@ -45,51 +43,63 @@
 	</head>
 
 	<body>
-		<!-- Navbar -->
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
+        <!-- To make sticky footer need to wrap in a div -->
+        <div id="wrap">
+            <!-- Navbar -->
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
 
-					<div class="nav-collapse collapse">
-						<ul class="nav">
-							<li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ URL::to('') }}">Home</a></li>
-						</ul>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li {{ (Request::is('/') ? 'class="active"' : '') }}><a href="{{ URL::to('') }}">Home</a></li>
+                            </ul>
 
-			                        <ul class="nav pull-right">
-			                            @if (Auth::check())
-			                            <li class="navbar-text">Logged in as {{ Auth::user()->username }}</li>
-			                            <li class="divider-vertical"></li>
-			                            <li {{ (Request::is('account') ? 'class="active"' : '') }}><a href="{{ URL::to('user') }}">Account</a></li>
-			                            <li><a href="{{ URL::to('user/logout') }}">Logout</a></li>
-			                            @else
-			                            <li {{ (Request::is('user/login') ? 'class="active"' : '') }}><a href="{{ URL::to('user/login') }}">Login</a></li>
-			                            <li {{ (Request::is('user/create') ? 'class="active"' : '') }}><a href="{{ URL::to('user/create') }}">Sign Up</a></li>
-			                            @endif
-			                        </ul>
-					</div>
-					<!-- ./ nav-collapse -->
-				</div>
-			</div>
-		</div>
-		<!-- ./ navbar -->
+                                        <ul class="nav pull-right">
+                                            @if (Auth::check())
+                                            <li class="navbar-text">Logged in as {{ Auth::user()->username }}</li>
+                                            <li class="divider-vertical"></li>
+                                            <li {{ (Request::is('account') ? 'class="active"' : '') }}><a href="{{ URL::to('user') }}">Account</a></li>
+                                            <li><a href="{{ URL::to('user/logout') }}">Logout</a></li>
+                                            @else
+                                            <li {{ (Request::is('user/login') ? 'class="active"' : '') }}><a href="{{ URL::to('user/login') }}">Login</a></li>
+                                            <li {{ (Request::is('user/create') ? 'class="active"' : '') }}><a href="{{ URL::to('user/create') }}">Sign Up</a></li>
+                                            @endif
+                                        </ul>
+                        </div>
+                        <!-- ./ nav-collapse -->
+                    </div>
+                </div>
+            </div>
+            <!-- ./ navbar -->
 
-		<!-- Container -->
-		<div class="container">
-			<!-- Notifications -->
-			@include('notifications')
-			<!-- ./ notifications -->
+            <!-- Container -->
+            <div class="container">
+                <!-- Notifications -->
+                @include('notifications')
+                <!-- ./ notifications -->
 
-			<!-- Content -->
-			@yield('content')
-			<!-- ./ content -->
-		</div>
-		<!-- ./ container -->
+                <!-- Content -->
+                @yield('content')
+                <!-- ./ content -->
+            </div>
+            <!-- ./ container -->
 
+            <!-- the following div is needed to make a sticky footer -->
+            <div id="push"></div>
+        </div>
+        <!-- ./wrap -->
+
+        <div id="footer">
+            <div class="container">
+                <p class="muted credit">Laravel 4 Bootstrap Empowered on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Empowered">Github</a>.</p>
+            </div>
+        </div>
 		<!-- Javascripts
 		================================================== -->
 		<script src="{{ asset('assets/js/jquery.v1.8.3.min.js') }}"></script>
