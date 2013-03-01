@@ -1,12 +1,12 @@
 @extends('layouts.default')
 
-{{{-- Web site Title --}}}
+{{-- Web site Title --}}
 @section('title')
 @parent
 :: Account Login
 @stop
 
-{{{-- Content --}}}
+{{-- Content --}}
 @section('content')
 <div class="page-header">
 	<h1>Forgot Password</h1>
