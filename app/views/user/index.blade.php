@@ -1,12 +1,12 @@
 @extends('layouts.default')
 
-{{-- Web site Title --}}
+{{{-- Web site Title --}}}
 @section('title')
 @parent
 :: Account
 @stop
 
-{{-- New Laravel 4 Feature in use --}}
+{{{-- New Laravel 4 Feature in use --}}}
 @section('styles')
 @parent
 body {
@@ -14,7 +14,7 @@ body {
 }
 @stop
 
-{{-- Content --}}
+{{{-- Content --}}}
 @section('content')
 <div class="page-header">
 	<h1>Your settings</h1>
@@ -24,15 +24,15 @@ body {
     <tbody>
     <tr>
         <td>User Id</td>
-        <td>{{$user->id}}</td>
+        <td>{{{$user->id}}}</td>
     </tr>
     <tr>
         <td>Username</td>
-        <td>{{$user->username}}</td>
+        <td>{{{$user->username}}}</td>
     </tr>
     <tr>
         <td>Email</td>
-        <td>{{$user->email}}</td>
+        <td>{{{$user->email}}}</td>
     </tr>
     </tbody>
 </table>
