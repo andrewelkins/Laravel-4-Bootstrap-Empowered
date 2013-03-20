@@ -88,6 +88,7 @@ return array(
 		'Illuminate\Foundation\Providers\ComposerServiceProvider',
 		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
+		'Illuminate\Foundation\Providers\OptimizeServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 		'Illuminate\Encryption\EncryptionServiceProvider',
 		'Illuminate\Filesystem\FilesystemServiceProvider',
