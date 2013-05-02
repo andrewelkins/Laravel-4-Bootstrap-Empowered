@@ -1,3 +1,7 @@
+# NO LONGER MAINTAINED - Please check out one of the following.
+## [Laravel 4 Starter Site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site) - Same modules, plus a few more.
+## [Laravel 4 Bootstrap](https://github.com/andrew13/Laravel-4-Bootstrap) - Laravel skeleton app with twitter bootstrap.
+
 #Laravel 4 - Bootstrap Empowered Application (Stable)
 
 This is a Laravel 4 Bootstrap Application. It is a fork off of [andrew13/Laravel-4-Bootstrap](http://github.com/andrew13/Laravel-4-Bootstrap) which includes Twitter Bootstrap 2.3.0 and it comes as an example application to help you get started. This Empowered version adds 3 additional items for improved development speed.
