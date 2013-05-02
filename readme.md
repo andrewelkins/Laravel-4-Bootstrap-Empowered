@@ -1,4 +1,4 @@
-# NO LONGER MAINTAINED - Please check out one of the following.
+# NO LONGER MAINTAINED
 ## [Laravel 4 Starter Site](https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site) - Same modules, plus a few more.
 ## [Laravel 4 Bootstrap](https://github.com/andrew13/Laravel-4-Bootstrap) - Laravel skeleton app with twitter bootstrap.
 
